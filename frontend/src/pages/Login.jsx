@@ -20,7 +20,19 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
+      //  Leer la respuesta como texto (no json)
+      const text = await res.text();
+
+      // Mostrar lo que devuelve el backend
+      console.log('Respuesta cruda del servidor:', text);
+
+      //  Intentar convertir a JSON si posible
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (err) {
+        throw new Error('Respuesta del servidor no es JSON válido');
+      }
 
       if (!res.ok) {
         throw new Error(data.msg || 'Error al iniciar sesión');
