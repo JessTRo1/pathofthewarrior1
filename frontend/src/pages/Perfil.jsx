@@ -6,7 +6,7 @@ export default function Perfil() {
 
   const handleAvatarChange = async (avatarUrl) => {
     try {
-      const res = await fetch('http://localhost:5000/api/user/avatar', {
+     const res = await fetch(`${import.meta.env.VITE_API_URL}/user/avatar`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

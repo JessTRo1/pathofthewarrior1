@@ -19,10 +19,10 @@ export default function RutinaDetalle() {
     const fetchDatos = async () => {
       try {
         const [rutinaRes, hechasRes] = await Promise.all([
-          fetch(`http://localhost:5000/api/rutinas/${id}`, {
+          fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}`, {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          fetch(`http://localhost:5000/api/user/rutinas-hechas`, {
+          fetch(`${import.meta.env.VITE_API_URL}/user/rutinas-hechas`, {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
@@ -51,7 +51,7 @@ export default function RutinaDetalle() {
 
   const handleEliminarComentario = async (comentarioId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/rutinas/${id}/comentarios/${comentarioId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}/comentarios/${comentarioId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -74,7 +74,7 @@ export default function RutinaDetalle() {
 
   const guardarComentarioEditado = async (comentarioId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/rutinas/${id}/comentarios/${comentarioId}`, {
+     const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}/comentarios/${comentarioId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ export default function RutinaDetalle() {
     if (!confirmacion) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/rutinas/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`
@@ -121,7 +121,7 @@ export default function RutinaDetalle() {
 
   const toggleRutinaHecha = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/user/rutinas-hechas/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/user/rutinas-hechas/${id}`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` }
       });

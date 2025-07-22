@@ -13,14 +13,14 @@ export default function Dashboard() {
     const fetchData = async () => {
       try {
         // Obtener rutinas hechas del usuario 
-        const resHechas = await fetch('http://localhost:5000/api/user/rutinas-hechas', {
+        const resHechas = await fetch(`${import.meta.env.VITE_API_URL}/user/rutinas-hechas`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const dataHechas = await resHechas.json();
         setRutinasHechas(dataHechas);
 
         // Obtener ranking
-        const resRanking = await fetch('http://localhost:5000/api/user/ranking', {
+        const resRanking = await fetch(`${import.meta.env.VITE_API_URL}/user/ranking`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const dataRanking = await resRanking.json();

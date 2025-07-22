@@ -10,7 +10,7 @@ export default function Rutinas() {
   useEffect(() => {
     const fetchRutinas = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/rutinas', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

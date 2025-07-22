@@ -10,7 +10,7 @@ export default function ComentarioForm({ rutinaId, onNuevoComentario, token }) {
     if (!texto.trim()) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/rutinas/${rutinaId}/comentarios`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${rutinaId}/comentarios`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

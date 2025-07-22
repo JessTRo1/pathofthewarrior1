@@ -16,7 +16,7 @@ export default function EditarRutina() {
   useEffect(() => {
     const obtenerRutina = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/rutinas/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();
@@ -57,7 +57,7 @@ export default function EditarRutina() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:5000/api/rutinas/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/rutinas/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
