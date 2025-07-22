@@ -1,0 +1,26 @@
+// COLORES
+$color-bg-dark: #2e2e2e;
+$color-bg-light: #909090b9;
+$color-primary: #ffd700;
+$color-primary-hover: #e6c200;
+$color-error: #cc0000;
+$color-error-hover: #990000;
+$color-cancel: #666;
+$color-cancel-hover: #555;
+$color-text: #ffffff;
+$color-muted: #aaa;
+
+// TIPOGRAFÍA
+$font-heading: 'combat_patriotregular', 'Segoe UI', sans-serif;
+$font-body: 'tactical_trooperregular', 'Segoe UI', sans-serif;
+
+// TAMAÑOS
+$border-radius: 0.625rem; 
+$box-shadow: 0 0 0.9375rem rgba($color-primary, 0.3); 
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
+// LAYOUT
+$container-max-width: 80vw;

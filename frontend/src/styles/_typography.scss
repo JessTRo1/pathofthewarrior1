@@ -1,0 +1,50 @@
+@use './variables' as *;
+@use './utilities' as *;
+
+html {
+
+  @include respond-to(ultra) {
+    font-size: 200%; 
+  }
+  @include respond-to(mobile) {
+    font-size:80%; 
+  }
+}
+
+// ESTILO BASE DEL BODY 
+body {
+  font-family: $font-body;
+  font-size: 1rem; 
+  line-height: 1.6;
+  color: $color-text;
+}
+
+
+// TITULOS
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: $color-primary;
+  text-align: center;
+  line-height: 1.2;
+  margin-block: 2rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+// PÁRRAFOS Y TEXTO GENERAL
+p {
+  font-size: 1rem;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.text-muted {
+  font-style: italic;
+  color: $color-muted;
+  text-align: center;
+}

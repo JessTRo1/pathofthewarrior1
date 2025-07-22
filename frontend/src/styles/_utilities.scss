@@ -1,0 +1,125 @@
+@use './variables' as *;
+
+// CONTENEDORES
+.container {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-block: 4rem;
+  padding: 2rem;
+  background-color: $color-bg-light;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1rem rgba($color-primary, 0.3);
+}
+
+// FORMULARIOS
+.form-container {
+  background-color: $color-bg-dark;
+  padding: 1rem;
+  margin-block: 1rem;
+  border-radius: 0.5rem;
+}
+
+// INPUTS
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-block: 0.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  color: $color-text;
+}
+
+// BOTONES
+.btn {
+  display: inline-block;
+  background-color: $color-primary;
+  color: #1c1c1c;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0.5rem;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+
+  &--eliminar {
+    background-color: $color-error;
+    color: white;
+
+    &:hover {
+      background-color: $color-error-hover;
+    }
+  }
+
+  &--cancelar {
+    background-color: $color-cancel;
+
+    &:hover {
+      background-color: $color-cancel-hover;
+    }
+  }
+}
+
+// UTILIDADES DE TEXTO Y SOMBRAS
+.text-center {
+  text-align: center;
+}
+
+.shadow-gold {
+  box-shadow: 0 0 1rem rgba($color-primary, 0.3);
+}
+
+// UTILIDADES DE VISUALIZACIÓN
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.3s;
+}
+
+.fade-in-delay-2 {
+  animation-delay: 1.5s;
+}
+
+.fade-in-delay-3 {
+  animation-delay: 3s;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == ultra {
+    @media screen and (min-width: 2560px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Variables globales 
+@use './variables' as *;
+
+// Reset básico 
+@use './reset' as *;
+
+// Carga de fuentes personalizadas
+@use './fonts' as *;
+
+// Tipografía general y títulos
+@use './typography' as *;
+
+// Utilidades: contenedores, clases auxiliares, botones genéricos
+@use './utilities' as *;
+// Componentes individuales (Navbar, RutinaCard, ComentarioForm, etc.)
+@use './components' as *;
