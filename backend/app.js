@@ -16,7 +16,7 @@ app.use('/api/rutinas', require('./routes/rutinaRoutes'));
 app.use('/api/user', require('./routes/userRoutes'));
 
 // Ruta de prueba
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('API funcionando');
 });
 
