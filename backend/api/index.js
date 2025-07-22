@@ -20,7 +20,7 @@ app.use('/api/protected', require('../routes/protectedRoutes'));
 app.use('/api/rutinas', require('../routes/rutinaRoutes'));
 app.use('/api/user', require('../routes/userRoutes'));
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.send('API funcionando');
 });
 
